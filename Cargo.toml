@@ -1,0 +1,14 @@
+[package]
+name = "dmg-emu"
+version = "0.1.0"
+edition = "2021"
+default-run = "dmg-emu"
+description = "Emulador do Game Boy DMG com CLI e frontend WebAssembly"
+
+[lib]
+name = "dmg_emu"
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "dmg-emu"
+path = "src/main.rs"

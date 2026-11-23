@@ -1,0 +1,4 @@
+/target/
+/work/
+/web/dmg_emu.wasm
+__pycache__/

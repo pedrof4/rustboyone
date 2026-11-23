@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="runner.js"></script>
+  <title>DMG Emu</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>DMG Emu</h1>
+      <label class="cartridge">
+        Abrir ROM
+        <input id="rom" type="file" accept=".gb,.gbc,application/octet-stream" aria-label="Abrir ROM">
+      </label>
+    </header>
+    <section aria-label="Emulador">
+      <div class="display">
+        <canvas id="screen" width="160" height="144" tabindex="0" aria-label="Tela do Game Boy"></canvas>
+      </div>
+      <div class="toolbar">
+        <p id="status" role="status">Carregando emulador…</p>
+        <div class="actions">
+          <button id="pause" type="button" disabled>Pausar</button>
+          <button id="audio" type="button" aria-pressed="false" disabled>Som</button>
+        </div>
+      </div>
+      <div class="controls" aria-label="Controles por toque">
+        <div class="dpad">
+          <button type="button" data-key="2" aria-label="Cima">↑</button>
+          <button type="button" data-key="1" aria-label="Esquerda">←</button>
+          <button type="button" data-key="3" aria-label="Baixo">↓</button>
+          <button type="button" data-key="0" aria-label="Direita">→</button>
+        </div>
+        <div class="buttons">
+          <button type="button" data-key="5">B</button>
+          <button type="button" data-key="4">A</button>
+        </div>
+        <div class="system">
+          <button type="button" data-key="6">Select</button>
+          <button type="button" data-key="7">Start</button>
+        </div>
+      </div>
+    </section>
+    <footer>Setas <span>Direção</span> · Z <span>A</span> · X <span>B</span> · Shift <span>Select</span> · Enter <span>Start</span></footer>
+  </main>
+</body>
+</html>

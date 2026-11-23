@@ -1,0 +1,50 @@
+:root {
+  color-scheme: dark;
+  font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  background: #111318;
+  color: #f5f5f9;
+  --accent: #d2bfff;
+  --panel: #242631;
+  --muted: #b5b6c8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100% - 32px, 584px); margin: 36px auto; }
+header, .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+header { margin-bottom: 22px; }
+h1 { margin: 0; font-size: clamp(24px, 7vw, 38px); letter-spacing: -.08em; }
+button, .cartridge {
+  border: 1px solid #56586a;
+  border-radius: 7px;
+  font: inherit;
+  color: inherit;
+  background: #272935;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .48; cursor: default; }
+button:focus-visible, .cartridge:focus-within { outline: 2px solid var(--accent); outline-offset: 4px; }
+.cartridge { position: relative; background: var(--accent); border-color: var(--accent); color: #151025; font-weight: 700; }
+.cartridge input { opacity: 0; position: absolute; inset: 0; width: 100%; cursor: pointer; }
+section { background: var(--panel); padding: clamp(12px, 4vw, 24px); border: 1px solid #393b4a; border-radius: 18px; }
+.display { background: #0a0b0e; padding: clamp(7px, 3vw, 18px); border-radius: 9px; }
+canvas { display: block; width: min(100%, 480px); margin: auto; height: auto; image-rendering: pixelated; background: #eee; }
+.toolbar { margin-top: 14px; flex-wrap: wrap; }
+#status { margin: 0; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.actions { display: flex; gap: 8px; }
+.actions button { font-size: 13px; }
+button[aria-pressed="true"], button[data-active] { background: var(--accent); color: #151025; border-color: var(--accent); }
+.controls { display: grid; grid-template-columns: 1fr 1fr; margin-top: 22px; gap: 12px; }
+.controls button { touch-action: none; user-select: none; }
+.dpad { display: grid; grid-template-columns: repeat(3, 39px); gap: 3px; }
+.dpad button { width: 39px; height: 36px; padding: 0; }
+.dpad button:first-child { grid-column: 2; }
+.dpad button:nth-child(2) { grid-column: 1; }
+.buttons { display: flex; gap: 10px; align-items: center; justify-content: end; }
+.buttons button { background: #4c376f; width: 46px; height: 46px; border-radius: 50%; }
+.system { grid-column: 1 / -1; justify-self: center; display: flex; gap: 8px; }
+.system button { font-size: 12px; }
+footer { color: var(--muted); font-size: 12px; line-height: 1.8; margin-top: 15px; text-align: center; }
+footer span { color: #d9daea; }
